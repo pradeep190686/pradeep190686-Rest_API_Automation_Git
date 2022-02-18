@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "security-segments-end-point-schema",
+  "description": "list of investigations",
+  "type":"object",
+  "properties":{
+    "meta": {
+      "description": "meta information for pagination results",
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "number"
+        },
+        "next": {
+          "type": ["string", "null"]
+        },
+        "previous": {
+          "type": ["string", "null"]
+        },
+        "page": {
+          "type": "number"
+        },
+        "per_page": {
+          "type": "number"
+        }
+      }
+    },
+    "user_session": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "type": "string"
+        },
+        "auth": {
+          "type": "string"
+        }
+      }
+    },
+    "security_segments": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "users": {
+            "type":"array"
+          },
+          "security_segments": {
+            "type":"string"
+          },
+          "meta": {
+            "type":"boolean"
+          },
+          "_normalized": {
+            "type":"string"
+          },
+          "id":{
+            "type":"string"
+          }
+        }
+      }
+    }
+  },
+  "required": ["meta", "user_session", "security_segments"]
+}

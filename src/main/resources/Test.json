@@ -1,0 +1,20 @@
+{
+  "operationId": "getAllClaims",
+  "parameters": [],
+  "description": "Returns a list fo all Claims.",
+  "responses": {
+    "200": {
+      "description": "",
+      "content": {
+        "application/vnd.pwc-co-api.party+json": {
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Claim"
+            }
+          }
+        }
+      }
+    }
+  }
+}
